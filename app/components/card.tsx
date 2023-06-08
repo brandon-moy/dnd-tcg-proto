@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Card() {
   const [front, setFront] = useState<boolean>(true);
@@ -11,11 +12,19 @@ export default function Card() {
         className={`relative card-container w-[180px] h-[280px] ${face} transition-transform`}
       >
         <div
-          className="absolute w-full h-full backface-hidden bg-amber-950 rounded-2xl"
+          className="absolute flex flex-wrap justify-center w-full h-full p-2 rounded backface-hidden bg-amber-950"
           onClick={() => setFront(false)}
-        ></div>
+        >
+          <Image
+            width="175"
+            height="200"
+            src="/cam.jpg"
+            alt="Image of Cameron for testing"
+          />
+          <p className="pt-2">Some text about card information here</p>
+        </div>
         <div
-          className="absolute flex items-center justify-center w-full h-full card-back backface-hidden bg-amber-950 rounded-2xl"
+          className="absolute flex items-center justify-center w-full h-full card-back backface-hidden bg-amber-950"
           onClick={() => setFront(true)}
         >
           <div className="w-[95%] relative h-[97%] rounded-xl border-4 border-amber-500">
