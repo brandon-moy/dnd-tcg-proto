@@ -33,3 +33,15 @@ body {
 .backface-hidden {
   backface-visibility: hidden;
 }
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
